@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Platform Jump 1.1.1</title>
+    <title>Platform Jump 1.1.2</title>
 
     <!-- this line is to include the FontAwesome icon set -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
@@ -16,28 +16,26 @@
     <link rel="stylesheet" type="text/css" href="platform-jump.css" />
 </head>
 
-<body>
+<body onload="checkMobile()">
     <div id="header" class="container-fluid">
         <div class="row">
             <div class="col-2">
-                <p id="homepage"><a href="/">Link Back to Homepage</a></p>
+                <p id="homepage"><a href="#">Link Back to Projects</a></p>
             </div>
             <button id="newlevel" type="button" class="btn btn-primary">New Level</button>
             <div class="col-2">
                 <select id="difficulty" class="custom-select form-control">
-                    <!-- <option value="25">Beginner</option> -->
                     <option value="25">Easy</option>
                     <option value="20">Medium</option>
                     <option value="15">Hard</option>
-                    <!-- <option value="5">Expert</option> -->
-                    <!-- <option value="6">Insanity</option> -->
+                    <option value="10">Insanity</option>
                 </select>
             </div>
             <div class="col-2 border border-success">
                 <h3>Games Won: <span id="wins">0</span></h3>
             </div>
             <div class="col-2 border border-danger">
-                <h3>Games Lost: <span id="loses">0</span></h3>
+                <h3>Games Lost: <span id="losses">0</span></h3>
             </div>
             <div class="col-2">
                 <input type="checkbox" id="autolevel">Auto-generate New Level<br>
@@ -45,7 +43,10 @@
         </div>
     </div>
     <div id="universe">
-        <canvas></canvas>
+        <canvas width="1450" height="650" onclick="run()"></canvas>
+        <h2>Click in game area to begin.</h2>
+        <h5>Use arrow keys to control the square.</h5>
+        <p id="hint">Press Ctrl & + or Ctrl & - (⌘ & + or ⌘ & - on Mac) to adjust the game area for your screen.</p>
     </div>
     <script src="platform-jump.js"></script>
 </body>
